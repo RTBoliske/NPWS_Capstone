@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Favorite Parks Survey Results";
+}
+
+@using Capstone.Web.Models
+@model List<SurveyResult>
+
+<h1 class="mb-lg-4 p-4">Favorite Parks Survey Results</h1>
+
+<div class="p-4">
+    <p>You've voted, and we listened!  Below we've organized your favorite parks - according to your votes.</p>
+    <p>Check out which National Park made it to the top spot!</p>
+</div>
+
+
+<div class="row">
+    <div class="col-md-6 offset-md-1">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Rank</th>
+                    <th scope="col"></th>
+                    <th scope="col">Park</th>
+                    <th scope="col">Votes</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int index = 0; index < Model.Count; index++)
+                {
+                    <tr>
+                        <td>@(index + 1)</td>
+                        <td><img src="~/Content/img/parks/@(Model[index].ParkCode.ToLower()).jpg" class="img-fluid" /></td>
+                        <td>@Model[index].ParkName</td>
+                        <td>@Model[index].SurveyCount.ToString()</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

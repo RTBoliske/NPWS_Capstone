@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "National Park Weather App";
+}
+
+@using Capstone.Web.Models
+@model List<Park>
+
+@foreach (var item in Model)
+{
+    <div class="flex-container">
+        <div>
+            <a href="~/Park/Detail/@(item.ParkCode.ToLower())">
+                <img src="~/Content/img/parks/@(item.ParkCode.ToLower()).jpg" class="img-fluid" />
+            </a>
+        </div>
+
+        <div>
+           <h4>@item.ParkName</h4>
+           <h4>@item.State</h4>
+           <p style="text-align: left; font-size: 16px;">@item.ParkDescription</p>
+        </div>
+    </div>
+}
+
+
+

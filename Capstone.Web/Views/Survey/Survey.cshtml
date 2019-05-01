@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Favorite Parks Survey";
+}
+
+@using Capstone.Web.Models
+@model Survey
+
+
+<h1 class="survey-title mb-lg-2">Park Survey</h1>
+<br />
+@using (Html.BeginForm("NewSurvey", "Survey", FormMethod.Post, new { @class="survey-form"}))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.ParkCode)
+        @Html.DropDownListFor(m => m.ParkCode , Park.GetParkNames(), "Select a Park", new { @class = "form-control"})
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.EmailAddress)
+        @Html.TextBoxFor(m => m.EmailAddress, "Enter email address",new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.State)
+        @Html.DropDownListFor(m => m.State, Survey.GetStates(), "Select a State", new { @class = "form-control"})
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.ActivityLevel)<br />
+        <span> Inactive </span> @Html.RadioButtonFor(m => m.ActivityLevel, "Inactive")
+        <span> | Sendentry </span>@Html.RadioButtonFor(m => m.ActivityLevel, "Sedentry")
+        <span> | Active </span> @Html.RadioButtonFor(m => m.ActivityLevel, "Active")
+        <span> | Extremely Active </span> @Html.RadioButtonFor(m => m.ActivityLevel, "Extremely Active")
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+}
+
+

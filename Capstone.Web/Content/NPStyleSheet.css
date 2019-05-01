@@ -1,0 +1,106 @@
+﻿header {
+    margin: 25px;
+}
+
+    header h1 {
+        font-size: 30px;
+        color: #FFFFFF;
+    }
+
+    header p {
+        color: #FFFFFF;
+        font-size: 12px;
+    }
+
+    header img {
+        height: 110px;
+    }
+
+/*_Layout*/
+ul.nav-bar {
+    background: none repeat scroll 0 0 lightgray;
+    font-weight: bold;
+    padding: 6px 0px;
+    width: 100%;
+}
+
+li {
+    display: inline;
+}
+
+a:link, a:visited {
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: lightgray;
+    text-align: center;
+    padding: 6px;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    background-color: white;
+    color: black;
+    border-width: 1px;
+    border-top-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+}
+
+/*Park Index View*/
+
+.flex-container {
+    display: flex;
+}
+
+.flex-container > div {
+    background-color: #f1f1f1;
+    width: 50%;
+    margin: 10px;
+    margin-top: 10px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 20px;
+}
+
+/*Park Detail View*/
+
+.flex-container-detail {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: lightgray;
+    flex-direction: column;
+}
+
+.flex-container-detail > div {
+    background-color: white;
+    width: 100%;
+    margin: 10px;
+    text-align: center;
+    line-height: 25px;
+    font-size: 20px;
+    padding: 30px;
+}
+.dropdown {
+    text-align: center;
+}
+
+.card-group {
+    display: inline-block;
+    width: 19%;
+    flex-direction: row;
+    text-align: center;
+    margin: 4px;
+}
+
+/*Survey CSS*/
+
+.survey-title {
+    margin: 20px;
+}
+
+.survey-form {
+    width: 50%;
+    margin: 20px;
+}
+
+/*Survey Results View Page*/

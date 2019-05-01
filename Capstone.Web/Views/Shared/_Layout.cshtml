@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"><mete name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>National Park Geek</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="~/Content/NPStyleSheet.css" type="text/css"/>
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="~/Content/img/logo.png" alt="National Park Weather logo" />
+        <h1>National Park Geek</h1>
+
+    </header>
+    <nav>
+        <h2></h2>
+        <p> </p>
+        <ul>
+            <li><a href="@Url.Action("Index", "Park")">Home</a></li>
+            <li><a href="@Url.Action("Survey", "Survey")">Survey</a></li>
+
+        </ul>
+    </nav>
+    <div>
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Tech Elevator</p>
+        </footer>
+    </div> 
+
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
