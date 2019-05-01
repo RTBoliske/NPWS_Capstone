@@ -73,70 +73,78 @@
     </div>
 </div>
 
-<div class="container-fluid mt-4">
+<div class="container-fluid">
 
     @foreach (Weather item in Model.WeatherForecasts)
     {
         if (item.FiveDayForecastValue == 1)
         {
-            <div class="row">
-                <div class="col-lg-4"></div>
-                <div class="col-lg-3">
-                    <div class="card">
-                        <div>
-                            <img class="card-img-top mx-auto d-block" src="~/Content/img/weather/@(item.Forecast.ToLower()).png" alt="@item.Forecast" style="width:213px; height:180px;" />
-                        </div>
+	<div class="row">
 
-                        <div class="card-body">
-                            <h5 class="card-title" style="text-align: center;">@today.AddDays(item.FiveDayForecastValue - 1).DayOfWeek</h5>
-                            <p class="card-text" style="text-align: center;">@item.Forecast</p>
+		@*<div class="col-lg-4"></div>*@
+		<div class="col-lg-3 offset-2">
+			<div class="card">
+				<div>
+					<img class="card-img-top mx-auto d-block" src="~/Content/img/weather/@(item.Forecast.ToLower()).png" alt="@item.Forecast" style="width:213px; height:180px;" />
+				</div>
 
-                            @if (item.Forecast == "Snow")
-                            {
-                                <p class="card-text" style="text-align: center;">
-                                    Looks like snow, pack your snowshoes!
-                                </p>
-                            }
-                            else if (item.Forecast == "Rain")
-                            {
-                                <p class="card-text" style="text-align: center;">
-                                    Looks like rain, pack your rain gear and waterproof shoes!
-                                </p>
-                            }
-                            else if (item.Forecast == "Thunderstorms")
-                            {
-                                <p class="card-text" style="text-align: center;">
-                                    Looks like thunderstorms, seek shelter and avoid exposed ridges!
-                                </p>
-                            }
-                            else
-                            {
-                                <p class="card-text" style="text-align: center;">
-                                    Looks like sun, don't forget your sun screen!
-                                </p>
-                            }
+				<div class="card-body">
+					<h5 class="card-title" style="text-align: center;">@today.AddDays(item.FiveDayForecastValue - 1).DayOfWeek</h5>
+					<p class="card-text" style="text-align: center;">@item.Forecast</p>
 
-                            <div style="text-align:center;">
-                                <p class="card-text"><small class="text-muted">High: @item.HighTemp.ToString()</small></p>
-                                <p class="card-text"><small class="text-muted">Low: @item.LowTemp.ToString()</small></p>
+					@if (item.Forecast == "Snow")
+					{
+						<p class="card-text" style="text-align: center;">
+							Looks like snow, pack your snowshoes!
+						</p>
+					}
+					else if (item.Forecast == "Rain")
+					{
+						<p class="card-text" style="text-align: center;">
+							Looks like rain, pack your rain gear and waterproof shoes!
+						</p>
+					}
+					else if (item.Forecast == "Thunderstorms")
+					{
+						<p class="card-text" style="text-align: center;">
+							Looks like thunderstorms, seek shelter and avoid exposed ridges!
+						</p>
+					}
+					else
+					{
+						<p class="card-text" style="text-align: center;">
+							Looks like sun, don't forget your sun screen!
+						</p>
+					}
 
-                                @if (item.HighTemp > 75)
-                                {
-                                    <p class="card-text" style="text-align: center;">
-                                        Looks like it will be warm today, take an extra gallon of water!
-                                    </p>
-                                }
-                                else if (item.LowTemp < 20)
-                                {
-                                    <p class="card-text" style="text-align: center;">
-                                        Looks like it will be cold today, take care of the danger of exposure to frigid temperatures!
-                                    </p>
-                                }
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+					<div style="text-align:center;">
+						<p class="card-text"><small class="text-muted">High: @item.HighTemp.ToString()</small></p>
+						<p class="card-text"><small class="text-muted">Low: @item.LowTemp.ToString()</small></p>
+
+						@if (item.HighTemp > 75)
+						{
+							<p class="card-text" style="text-align: center;">
+								Looks like it will be warm today, take an extra gallon of water!
+							</p>
+						}
+						else if (item.LowTemp < 20)
+						{
+							<p class="card-text" style="text-align: center;">
+								Looks like it will be cold today, take care of the danger of exposure to frigid temperatures!
+							</p>
+						}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3 offset-2 p-4">
+			<div>
+				<button type="submit" class="btn btn-primary btn-md disabled"> C - Celcius</button>
+				<button type="submit" class="btn btn-primary btn-md active"> F - Farhenheit</button>
+			</div>
+		</div>
+
+	</div>
         }
         else
         {
