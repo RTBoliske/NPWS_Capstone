@@ -44,5 +44,22 @@ namespace Capstone.Web.Models
 
             return ParkNames;
         }
-    }
+
+		public static int ConvertTemperatureToCelsius(int temp)
+		{
+			int celsius = (temp - 32) * 5 / 9;
+			//celsius = (temp - 32) * 5 / 9;
+
+			return celsius;
+		}
+
+		public static int ConvertTemperatureToFahrenheit(int temp)
+		{
+			int fahrenheit = (temp * 9) / 5 + 32;
+			//fahrenheit = (temp * 9) / 5 + 32;
+
+			return fahrenheit;
+		}
+
+	}
 }
